@@ -22,9 +22,7 @@ class ClientConfig(BaseModel):
         """Return the environment ID for the given env name (default: prod)."""
         if env not in self.environments:
             available = sorted(self.environments.keys())
-            raise ValueError(
-                f"Unknown environment '{env}'. Available: {available}"
-            )
+            raise ValueError(f"Unknown environment '{env}'. Available: {available}")
         return self.environments[env]
 
     @property
@@ -60,7 +58,7 @@ def _resolve_token(client_id: str) -> str:
         if not token:
             raise EnvironmentError(
                 f"Missing env var {env_key} (and no DBT_TOKEN_DEFAULT fallback). "
-                f"Copy .env.example to .env and set either {env_key} or DBT_TOKEN_DEFAULT."
+                f"Copy .env.example to .env and set {env_key} or DBT_TOKEN_DEFAULT."
             )
         return token
 
