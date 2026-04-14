@@ -157,11 +157,11 @@ clients:
       dev: '211140592275330'
       dev_environment: '211140592275331'
       prod: '211140592275332'
-  RENXT:
-    account_id: '211140592271429'
-    project_id: '211140592273300'
-    environments:
-      prod: REPLACE_WITH_PROD_ENV_ID
+  #RENXT:
+  #  account_id: '211140592271429'
+  #  project_id: '211140592273300'
+  #  environments:
+  #    prod: REPLACE_WITH_PROD_ENV_ID
   SHSM:
     account_id: '211140592271429'
     project_id: '211140592272211'
