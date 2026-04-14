@@ -1,6 +1,11 @@
 import pytest
 
-from src.dbt_mcp.tools.jobs import get_job_run_details, get_job_run_error, list_jobs
+from src.dbt_mcp.tools.jobs import (
+    get_job_run_details,
+    get_job_run_error,
+    list_all_jobs,
+    list_jobs,
+)
 
 
 async def test_list_jobs_success(mock_dbt_admin):
@@ -13,6 +18,21 @@ async def test_list_jobs_success(mock_dbt_admin):
 async def test_list_jobs_unknown_client():
     with pytest.raises(ValueError, match="Unknown client"):
         await list_jobs("DOESNOTEXIST")
+
+
+async def test_list_all_jobs(mock_dbt_admin):
+    mock_dbt_admin.return_value = {"data": [{"id": 1, "name": "Daily Run"}]}
+    result = await list_all_jobs()
+    assert "TESTCLIENT" in result
+    assert result["TESTCLIENT"]["status"] == "ok"
+    assert "data" in result["TESTCLIENT"]["data"]
+
+
+async def test_list_all_jobs_error_is_captured(mock_dbt_admin):
+    mock_dbt_admin.side_effect = RuntimeError("Admin API 403")
+    result = await list_all_jobs()
+    assert result["TESTCLIENT"]["status"] == "error"
+    assert "403" in result["TESTCLIENT"]["error"]
 
 
 async def test_get_job_run_details(mock_dbt_admin):

@@ -1,9 +1,13 @@
+import asyncio
+
 from fastmcp import FastMCP
 
-from ..client_registry import get_client
+from ..client_registry import get_client, list_clients
 from ..dbt_client import DbtCloudClient
 
 router = FastMCP("jobs")
+
+_BATCH_SIZE = 6
 
 
 @router.tool()
@@ -17,6 +21,32 @@ async def list_jobs(client: str) -> dict:
     cfg = get_client(client)
     dbt = DbtCloudClient(cfg)
     return await dbt.admin_get("jobs/", params={"project_id": cfg.project_id})
+
+
+@router.tool()
+async def list_all_jobs() -> dict:
+    """
+    List jobs for every configured client in batches to avoid rate limiting.
+    Use this instead of calling list_jobs() repeatedly when you need a full
+    cross-client overview. Returns a dict keyed by client identifier.
+    """
+    all_clients = list_clients()
+    results = {}
+
+    for i in range(0, len(all_clients), _BATCH_SIZE):
+        batch = all_clients[i : i + _BATCH_SIZE]
+
+        async def fetch(client_id: str) -> tuple[str, dict]:
+            try:
+                data = await list_jobs(client_id)
+                return client_id, {"status": "ok", "data": data}
+            except Exception as e:
+                return client_id, {"status": "error", "error": str(e)}
+
+        batch_results = await asyncio.gather(*[fetch(c) for c in batch])
+        results.update(dict(batch_results))
+
+    return results
 
 
 @router.tool()
