@@ -41,7 +41,10 @@ class DbtCloudClient:
         url = f"{ADMIN_BASE}/accounts/{self.config.account_id}/{path}"
         async with httpx.AsyncClient(timeout=30) as http:
             resp = await http.get(url, headers=self._admin_headers, params=params or {})
-            resp.raise_for_status()
+            if not resp.is_success:
+                raise RuntimeError(
+                    f"Admin API {resp.status_code} for {url}: {resp.text[:500]}"
+                )
             return resp.json()
 
     async def discovery_query(self, query: str, variables: dict | None = None) -> dict:
