@@ -4,11 +4,6 @@
 # environments: named environment IDs — tools default to "prod"
 
 clients:
-  FCCTX:
-    account_id: "211140592271429"
-    project_id: "REPLACE_WITH_FCCTX_PROJECT_ID"
-    environments:
-      prod: "REPLACE_WITH_FCCTX_PROD_ENV_ID"
   BCMNY:
     account_id: "211140592271429"
     project_id: "211140592273346"
@@ -16,29 +11,213 @@ clients:
       dev: "211140592275501"
       prod: "211140592275503"
       staging: "211140592275569"
-  HFBTX:
-    account_id: "211140592271429"
-    project_id: "REPLACE_WITH_HFBTX_PROJECT_ID"
-    environments:
-      prod: "REPLACE_WITH_HFBTX_PROD_ENV_ID"
-  NMSS:
-    account_id: "211140592271429"
-    project_id: "REPLACE_WITH_NMSS_PROJECT_ID"
-    environments:
-      prod: "REPLACE_WITH_NMSS_PROD_ENV_ID"
-  FTC:
-    account_id: "211140592271429"
-    project_id: "REPLACE_WITH_FTC_PROJECT_ID"
-    environments:
-      prod: "REPLACE_WITH_FTC_PROD_ENV_ID"
   ABS:
     account_id: "211140592271429"
-    project_id: "REPLACE_WITH_ABS_PROJECT_ID"
+    project_id: "211140592272124"
     environments:
-      prod: "REPLACE_WITH_ABS_PROD_ENV_ID"
+      prod: "211140592273308"
+      dev: "211140592273828"
   BFF:
     account_id: "211140592271429"
-    project_id: "REPLACE_WITH_BFF_PROJECT_ID"
+    project_id: "211140592272133"
     environments:
-      prod: "REPLACE_WITH_BFF_PROD_ENV_ID"
-  # TODO: Add all 14 Mailchimp clients in the same pattern
+      prod: "211140592273323"
+      dev: "211140592273084"
+  ARLIA:
+    account_id: "211140592271429"
+    project_id: "211140592273453"
+    environments:
+      prod: "211140592275677"
+      dev: "211140592275675"
+  FBNIN:
+    account_id: '211140592271429'
+    project_id: '211140592273247'
+    environments:
+      dev: '211140592275327'
+      development: '211140592275328'
+      prod: '211140592275329'
+      staging: '211140592275606'
+  FBNYC:
+    account_id: '211140592271429'
+    project_id: '211140592273454'
+    environments:
+      dev: '211140592275678'
+      dev_environment: '211140592275679'
+      prod: '211140592275680'
+  FCCTX:
+    account_id: '211140592271429'
+    project_id: '211140592273246'
+    environments:
+      dev: '211140592275324'
+      dev_environment: '211140592275325'
+      prod: '211140592275326'
+  FTC:
+    account_id: '211140592271429'
+    project_id: '211140592272187'
+    environments:
+      dev_ftc_us: '211140592273246'
+      dev: '211140592273247'
+      prod: '211140592273556'
+  GBRFB:
+    account_id: '211140592271429'
+    project_id: '211140592273243'
+    environments:
+      dev: '211140592275315'
+      dev_environment: '211140592275316'
+      prod: '211140592275317'
+  GRNSC:
+    account_id: '211140592271429'
+    project_id: '211140592271894'
+    environments:
+      dev_grnsc_us: '211140592272425'
+      dev: '211140592272488'
+      stg_dev_deployment: '211140592272595'
+  GROUP:
+    account_id: '211140592271429'
+    project_id: '211140592272170'
+    environments:
+      dev: '211140592273211'
+      dbt_group_us: '211140592273212'
+  HFBTX:
+    account_id: '211140592271429'
+    project_id: '211140592272135'
+    environments:
+      dev_hfbtx_us: '211140592273085'
+      dev: '211140592273087'
+      prod: '211140592273438'
+  HSUTH:
+    account_id: '211140592271429'
+    project_id: '211140592273343'
+    environments:
+      dev: '211140592275494'
+      dev_environment: '211140592275495'
+      staging: '211140592275496'
+      prod: '211140592275497'
+  JW:
+    account_id: '211140592271429'
+    project_id: '211140592272210'
+    environments:
+      dev_jw_us: '211140592273331'
+      dev: '211140592273332'
+  LAM:
+    account_id: '211140592271429'
+    project_id: '211140592273245'
+    environments:
+      dev: '211140592275321'
+      development: '211140592275322'
+      prod: '211140592275323'
+  LOROH:
+    account_id: '211140592271429'
+    project_id: '211140592273252'
+    environments:
+      dev: '211140592275339'
+      development: '211140592275340'
+      prod: '211140592275341'
+  LSSOH:
+    account_id: '211140592271429'
+    project_id: '211140592273239'
+    environments:
+      dev: '211140592275305'
+      dev_environment: '211140592275306'
+      prod: '211140592275307'
+      staging: '211140592275514'
+  MFNMS:
+    account_id: '211140592271429'
+    project_id: '211140592273244'
+    environments:
+      dev: '211140592275318'
+      development: '211140592275319'
+      prod: '211140592275320'
+      staging: '211140592275568'
+  MSMIL:
+    account_id: '211140592271429'
+    project_id: '211140592273251'
+    environments:
+      dev: '211140592275336'
+      dev_environment: '211140592275337'
+      prod: '211140592275338'
+  NMSS:
+    account_id: '211140592271429'
+    project_id: '211140592272651'
+    environments:
+      local: '211140592274253'
+      dev: '211140592274710'
+      prod: '211140592275241'
+  PANCAN:
+    account_id: '211140592271429'
+    project_id: '211140592272193'
+    environments:
+      dbt_pancan_us: '211140592273257'
+      dev: '211140592273258'
+      prod: '211140592273324'
+  PRCH:
+    account_id: '211140592271429'
+    project_id: '211140592273248'
+    environments:
+      dev: '211140592275330'
+      dev_environment: '211140592275331'
+      prod: '211140592275332'
+  RENXT:
+    account_id: '211140592271429'
+    project_id: '211140592273300'
+    environments:
+      prod: REPLACE_WITH_PROD_ENV_ID
+  SHSM:
+    account_id: '211140592271429'
+    project_id: '211140592272211'
+    environments:
+      dev_shsm_us: '211140592273334'
+      dev: '211140592273335'
+  SMI:
+    account_id: '211140592271429'
+    project_id: '211140592273250'
+    environments:
+      dev: '211140592275333'
+      dev_environment: '211140592275334'
+      prod: '211140592275335'
+  SPCTX:
+    account_id: '211140592271429'
+    project_id: '211140592273240'
+    environments:
+      dev: '211140592275308'
+      dev_environment: '211140592275309'
+      prod: '211140592275313'
+  TAPCLICKS:
+    account_id: '211140592271429'
+    project_id: '211140592273027'
+    environments:
+      dev: '211140592274875'
+  THREE:
+    account_id: '211140592271429'
+    project_id: '211140592273241'
+    environments:
+      dev: '211140592275310'
+      development: '211140592275311'
+      prod: '211140592275312'
+  TSAGS:
+    account_id: '211140592271429'
+    project_id: '211140592273446'
+    environments:
+      dev: '211140592275662'
+      dev_environment: '211140592275663'
+      prod: '211140592275664'
+  UGMTC:
+    account_id: '211140592271429'
+    project_id: '211140592273350'
+    environments:
+      dev: '211140592275506'
+      development: '211140592275507'
+      prod: '211140592275508'
+  VENCA:
+    account_id: '211140592271429'
+    project_id: '211140592273445'
+    environments:
+      dev: '211140592275659'
+      development: '211140592275660'
+      prod: '211140592275661'
+  WWP:
+    account_id: '211140592271429'
+    project_id: '211140592272209'
+    environments:
+      dev_wwp_us: '211140592273328'
+      dev: '211140592273329'
