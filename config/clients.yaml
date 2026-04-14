@@ -1,0 +1,44 @@
+# Client registry — safe to commit, contains NO secrets
+# account_id: your dbt Cloud account ID (same for all RKD clients)
+# project_id: the specific dbt Cloud project ID per client
+# environments: named environment IDs — tools default to "prod"
+
+clients:
+  FCCTX:
+    account_id: "211140592271429"
+    project_id: "REPLACE_WITH_FCCTX_PROJECT_ID"
+    environments:
+      prod: "REPLACE_WITH_FCCTX_PROD_ENV_ID"
+  BCMNY:
+    account_id: "211140592271429"
+    project_id: "211140592273346"
+    environments:
+      dev: "211140592275501"
+      prod: "211140592275503"
+      staging: "211140592275569"
+  HFBTX:
+    account_id: "211140592271429"
+    project_id: "REPLACE_WITH_HFBTX_PROJECT_ID"
+    environments:
+      prod: "REPLACE_WITH_HFBTX_PROD_ENV_ID"
+  NMSS:
+    account_id: "211140592271429"
+    project_id: "REPLACE_WITH_NMSS_PROJECT_ID"
+    environments:
+      prod: "REPLACE_WITH_NMSS_PROD_ENV_ID"
+  FTC:
+    account_id: "211140592271429"
+    project_id: "REPLACE_WITH_FTC_PROJECT_ID"
+    environments:
+      prod: "REPLACE_WITH_FTC_PROD_ENV_ID"
+  ABS:
+    account_id: "211140592271429"
+    project_id: "REPLACE_WITH_ABS_PROJECT_ID"
+    environments:
+      prod: "REPLACE_WITH_ABS_PROD_ENV_ID"
+  BFF:
+    account_id: "211140592271429"
+    project_id: "REPLACE_WITH_BFF_PROJECT_ID"
+    environments:
+      prod: "REPLACE_WITH_BFF_PROD_ENV_ID"
+  # TODO: Add all 14 Mailchimp clients in the same pattern

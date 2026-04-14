@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export PATH=\"$PATH:/c/Users/jjosephsen/.local/bin\")",
+      "Bash(uv run python -c ':*)",
+      "Bash(uv run:*)"
+    ]
+  }
+}
