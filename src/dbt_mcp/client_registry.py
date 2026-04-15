@@ -84,3 +84,14 @@ def get_client(client_id: str) -> ClientConfig:
 
 def list_clients() -> list[str]:
     return sorted(load_registry().keys())
+
+
+def get_client_by_project_id(project_id: str) -> str:
+    registry = load_registry()
+    for client_id, cfg in registry.items():
+        if cfg.project_id == str(project_id):
+            return client_id
+    raise ValueError(
+        f"No client found with project_id '{project_id}'. "
+        f"Available project IDs: {sorted(cfg.project_id for cfg in registry.values())}"
+    )
